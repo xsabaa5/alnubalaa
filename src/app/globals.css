@@ -82,6 +82,12 @@ body {
   100% { background-position: 200% 0; }
 }
 .gold-shine {
+  /* inline-block + padding-block so the line-box fully contains Tajawal's
+     Arabic diacritics (the fatha on م, dots on ن/ت/ب, etc.) — without this,
+     background-clip: text chops the gradient at the ascender line. */
+  display: inline-block;
+  padding-block: 0.18em;
+  line-height: 1.5;
   background: linear-gradient(
     100deg,
     var(--color-gold-deep) 0%,

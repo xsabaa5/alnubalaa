@@ -468,7 +468,7 @@ function Hero() {
             <Sparkle className="h-3 w-3 text-gold" />
           </p>
 
-          <h1 className="font-arabic text-[clamp(2.6rem,6vw,5.2rem)] font-extrabold leading-[1.05] text-emerald-deep">
+          <h1 className="font-arabic text-[clamp(2.6rem,6vw,5.2rem)] font-extrabold leading-[1.3] text-emerald-deep">
             مؤسسة النبلاء الاهلية
             <br />
             <span className="font-serif text-[clamp(1.4rem,3vw,2.4rem)] font-medium italic text-ink-soft">
@@ -743,7 +743,7 @@ function About() {
           <p className="divider-luxe mb-6">
             <span>Al-Nubalaa Private School</span>
           </p>
-          <h2 className="font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
+          <h2 className="font-arabic text-4xl font-extrabold leading-normal text-emerald-deep md:text-5xl">
             <span className="gold-shine">مؤسسة النبلاء الاهلية</span>
             <br />
             للطفولة النموذجية
@@ -866,7 +866,7 @@ function Features() {
             <p className="divider-luxe mb-6 text-gold-soft!">
               <span>Al-Nubalaa Private School</span>
             </p>
-            <h2 className="font-arabic text-4xl font-extrabold leading-tight md:text-5xl">
+            <h2 className="font-arabic text-4xl font-extrabold leading-normal md:text-5xl">
               تربيةٌ راقية، بيئةٌ آمنة،
               <br />
               <span className="gold-shine">ونتائج تفخر بها العائلة.</span>
@@ -918,7 +918,7 @@ function Gallery() {
             <p className="divider-luxe mb-6">
               <span>Al-Nubalaa Private School</span>
             </p>
-            <h2 className="font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
+            <h2 className="font-arabic text-4xl font-extrabold leading-normal text-emerald-deep md:text-5xl">
               لحظاتٌ صغيرة، أثرٌ يدوم.
             </h2>
             <p className="mt-4 font-arabic text-lg text-ink-soft">
@@ -1107,7 +1107,7 @@ function SectionHead({
       <p className="divider-luxe mx-auto">
         <span>{eyebrow}</span>
       </p>
-      <h2 className="mt-6 font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
+      <h2 className="mt-6 font-arabic text-4xl font-extrabold leading-normal text-emerald-deep md:text-5xl">
         {title}
       </h2>
       {subtitle && (
