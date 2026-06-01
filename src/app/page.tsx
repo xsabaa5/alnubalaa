@@ -6,54 +6,6 @@ import ContactForm from "./_components/ContactForm";
    Inline SVG brand & decorative art (no external assets needed)
    ───────────────────────────────────────────────────────────── */
 
-function BrandMark({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 80 80"
-      className={className}
-      role="img"
-      aria-label="دار النبلاء"
-    >
-      <defs>
-        <linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2f7a60" />
-          <stop offset="100%" stopColor="#0e3b2c" />
-        </linearGradient>
-        <linearGradient id="bm-gold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#e8d6a8" />
-          <stop offset="100%" stopColor="#a78538" />
-        </linearGradient>
-      </defs>
-      <circle cx="40" cy="40" r="38" fill="url(#bm-g)" />
-      <circle
-        cx="40"
-        cy="40"
-        r="34"
-        fill="none"
-        stroke="url(#bm-gold)"
-        strokeWidth="0.6"
-      />
-      {/* open book */}
-      <path
-        d="M20 48 C 28 42, 36 42, 40 46 C 44 42, 52 42, 60 48 L 60 56 C 52 50, 44 50, 40 54 C 36 50, 28 50, 20 56 Z"
-        fill="#fbf8f2"
-        opacity="0.96"
-      />
-      <path d="M40 46 L 40 54" stroke="#0e3b2c" strokeWidth="0.6" />
-      {/* leaves growing from book */}
-      <path
-        d="M40 46 C 42 38, 48 32, 56 30 C 54 38, 50 44, 42 46 Z"
-        fill="#e8d6a8"
-      />
-      <path
-        d="M40 46 C 38 40, 34 36, 28 35 C 30 41, 34 45, 40 46 Z"
-        fill="#c9a961"
-      />
-      <circle cx="40" cy="46" r="1.2" fill="#0e3b2c" />
-    </svg>
-  );
-}
-
 function Leaf({
   className = "",
   style,
@@ -377,13 +329,20 @@ function Nav() {
       <div className="absolute inset-0 -z-10 bg-cream/70 backdrop-blur-xl border-b border-emerald/10" />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
         <a href="#" className="flex items-center gap-3">
-          <BrandMark className="h-11 w-11" />
+          <Image
+            src="/images/logo.png"
+            alt="Al-Nubalaa Private School"
+            width={56}
+            height={56}
+            priority
+            className="h-12 w-12 object-contain"
+          />
           <span className="flex flex-col leading-tight">
             <span className="font-arabic text-base font-bold text-emerald-deep">
               دار النبلاء
             </span>
             <span className="font-serif text-[11px] tracking-[0.22em] text-gold-deep">
-              ALNUBALAA · EST. BAGHDAD
+              Al-Nubalaa Private School
             </span>
           </span>
         </a>
@@ -482,7 +441,7 @@ function Hero() {
           </p>
 
           <p className="mt-3 max-w-xl font-serif text-base italic text-ink-mute">
-            “Where childhood meets refinement — and learning feels like joy.”
+            “Al-Nubalaa Private School”
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -563,13 +522,19 @@ function HeroVisual() {
         <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-cream-soft/95 p-4 backdrop-blur-md">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <BrandMark className="h-10 w-10" />
+              <Image
+                src="/images/logo.png"
+                alt="Al-Nubalaa Private School"
+                width={48}
+                height={48}
+                className="h-11 w-11 object-contain"
+              />
               <div className="leading-tight">
                 <p className="font-arabic text-sm font-bold text-emerald-deep">
                   منذ سنوات في خدمة أطفالكم
                 </p>
                 <p className="font-serif text-[11px] tracking-[0.18em] text-gold-deep">
-                  KARRADA · BAGHDAD
+                  Al-Nubalaa Private School
                 </p>
               </div>
             </div>
@@ -608,7 +573,7 @@ function Programs() {
     <section id="programs" className="relative py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHead
-          eyebrow="OUR PROGRAMS · مراحلنا"
+          eyebrow="Al-Nubalaa Private School"
           title="رحلةٌ تربوية متكاملة من الحضانة حتى الابتدائية"
           subtitle="خمس مراحل مصممة بعناية، تنمو مع طفلك خطوة بخطوة، بحب ومنهجية وذوق رفيع."
         />
@@ -682,7 +647,7 @@ function CallCard() {
         style={{ ["--r" as string]: "180deg" }}
       />
       <p className="font-serif text-xs tracking-[0.22em] text-gold-soft">
-        ENROLLMENT OPEN
+        Al-Nubalaa Private School
       </p>
       <h3 className="mt-3 font-arabic text-2xl font-bold leading-snug">
         التسجيل مفتوح للعام الدراسي القادم
@@ -741,7 +706,7 @@ function About() {
         </div>
         <div className="lg:col-span-7">
           <p className="divider-luxe mb-6">
-            <span>Our Story · حكايتنا</span>
+            <span>Al-Nubalaa Private School</span>
           </p>
           <h2 className="font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
             <span className="gold-shine">دار النبلاء</span>
@@ -812,7 +777,7 @@ function AboutVisual() {
           />
           {/* tagline ribbon, kept */}
           <div className="absolute inset-x-6 bottom-6 rounded-full bg-emerald-deep/95 px-5 py-2 text-center font-serif text-xs tracking-[0.4em] text-gold-soft">
-            LEARN · GROW · SHINE
+            Al-Nubalaa Private School
           </div>
         </div>
       </div>
@@ -827,7 +792,7 @@ function AboutVisual() {
             تقييم عائلي عالٍ
           </p>
           <p className="font-serif text-[11px] tracking-widest text-gold-deep">
-            TRUSTED BY FAMILIES
+            Al-Nubalaa Private School
           </p>
         </div>
       </div>
@@ -864,7 +829,7 @@ function Features() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="divider-luxe mb-6 !text-gold-soft">
-              <span>WHY ALNUBALAA · لماذا نحن</span>
+              <span>Al-Nubalaa Private School</span>
             </p>
             <h2 className="font-arabic text-4xl font-extrabold leading-tight md:text-5xl">
               تربيةٌ راقية، بيئةٌ آمنة،
@@ -916,7 +881,7 @@ function Gallery() {
         <div className="flex flex-col items-end justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="divider-luxe mb-6">
-              <span>Moments · لحظاتنا</span>
+              <span>Al-Nubalaa Private School</span>
             </p>
             <h2 className="font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
               لحظاتٌ صغيرة، أثرٌ يدوم.
@@ -992,13 +957,13 @@ function Contact() {
                 style={{ ["--r" as string]: "30deg" }}
               />
               <p className="divider-luxe !text-gold-soft">
-                <span>Visit Us · زورونا</span>
+                <span>Al-Nubalaa Private School</span>
               </p>
               <h2 className="mt-6 font-arabic text-3xl font-extrabold leading-snug">
                 نحن سعداء بلقائكم.
               </h2>
               <p className="mt-3 font-arabic leading-loose text-cream-soft/80">
-                تفضّلوا بزيارة المدرسة، أو تواصلوا معنا في أي وقت — نحن مفتوحون
+                تفضّلوا بزيارة المدرسة، أو تواصلوا معنا في أي وقت — نحن متواجدون
                 دائمًا لاستقبالكم.
               </p>
 
@@ -1055,7 +1020,7 @@ function Contact() {
                   <div>
                     <p className="font-arabic font-bold">أوقات الدوام</p>
                     <p className="mt-1 font-arabic text-cream-soft/85">
-                      مفتوحون دائمًا للتواصل · الأحد – الخميس ٧:٣٠ ص – ٢:٣٠ م
+                      متواجدون دائمًا للتواصل · الأحد – الخميس ٧:٣٠ ص – ٢:٣٠ م
                     </p>
                   </div>
                 </li>
@@ -1127,13 +1092,19 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-12 lg:px-10">
         <div className="lg:col-span-4">
           <div className="flex items-center gap-3">
-            <BrandMark className="h-12 w-12" />
+            <Image
+              src="/images/logo.png"
+              alt="Al-Nubalaa Private School"
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain"
+            />
             <div className="leading-tight">
               <p className="font-arabic text-lg font-bold text-emerald-deep">
                 دار النبلاء
               </p>
               <p className="font-serif text-[11px] tracking-[0.22em] text-gold-deep">
-                ALNUBALAA PRIVATE SCHOOL
+                Al-Nubalaa Private School
               </p>
             </div>
           </div>
