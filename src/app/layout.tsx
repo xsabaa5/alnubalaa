@@ -23,20 +23,22 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "Al-Nubalaa Private School",
+  title: "مؤسسة النبلاء الاهلية · Al-Nubalaa Private School",
   description:
-    "Al-Nubalaa Private School — حضانة، تحضيري، روضة، تمهيدي وابتدائية. الكرادة، بغداد.",
+    "مؤسسة النبلاء الاهلية في الكرادة، بغداد. حضانة، تحضيري، روضة، تمهيدي وابتدائية — لحظات مليانة فرح، تعلم وضحكات بريئة.",
   keywords: [
-    "Al-Nubalaa Private School",
     "Alnubalaa",
-    "دار النبلاء",
+    "مؤسسة النبلاء الاهلية",
     "مدرسة خاصة بغداد",
     "Private School Baghdad",
     "Karrada School",
+    "حضانة بغداد",
+    "روضة الكرادة",
   ],
   openGraph: {
-    title: "Al-Nubalaa Private School",
-    description: "Al-Nubalaa Private School · Karrada, Baghdad",
+    title: "مؤسسة النبلاء الاهلية — Alnubalaa Private School",
+    description:
+      "حضانة • تحضيري • روضة • تمهيدي • ابتدائية — الكرادة، بغداد",
     locale: "ar_IQ",
     type: "website",
   },

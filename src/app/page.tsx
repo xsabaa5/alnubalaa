@@ -6,6 +6,54 @@ import ContactForm from "./_components/ContactForm";
    Inline SVG brand & decorative art (no external assets needed)
    ───────────────────────────────────────────────────────────── */
 
+function BrandMark({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 80 80"
+      className={className}
+      role="img"
+      aria-label="مؤسسة النبلاء الاهلية"
+    >
+      <defs>
+        <linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#2f7a60" />
+          <stop offset="100%" stopColor="#0e3b2c" />
+        </linearGradient>
+        <linearGradient id="bm-gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#e8d6a8" />
+          <stop offset="100%" stopColor="#a78538" />
+        </linearGradient>
+      </defs>
+      <circle cx="40" cy="40" r="38" fill="url(#bm-g)" />
+      <circle
+        cx="40"
+        cy="40"
+        r="34"
+        fill="none"
+        stroke="url(#bm-gold)"
+        strokeWidth="0.6"
+      />
+      {/* open book */}
+      <path
+        d="M20 48 C 28 42, 36 42, 40 46 C 44 42, 52 42, 60 48 L 60 56 C 52 50, 44 50, 40 54 C 36 50, 28 50, 20 56 Z"
+        fill="#fbf8f2"
+        opacity="0.96"
+      />
+      <path d="M40 46 L 40 54" stroke="#0e3b2c" strokeWidth="0.6" />
+      {/* leaves growing from book */}
+      <path
+        d="M40 46 C 42 38, 48 32, 56 30 C 54 38, 50 44, 42 46 Z"
+        fill="#e8d6a8"
+      />
+      <path
+        d="M40 46 C 38 40, 34 36, 28 35 C 30 41, 34 45, 40 46 Z"
+        fill="#c9a961"
+      />
+      <circle cx="40" cy="46" r="1.2" fill="#0e3b2c" />
+    </svg>
+  );
+}
+
 function Leaf({
   className = "",
   style,
@@ -329,17 +377,10 @@ function Nav() {
       <div className="absolute inset-0 -z-10 bg-cream/70 backdrop-blur-xl border-b border-emerald/10" />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
         <a href="#" className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Al-Nubalaa Private School"
-            width={56}
-            height={56}
-            priority
-            className="h-12 w-12 object-contain"
-          />
+          <BrandMark className="h-11 w-11" />
           <span className="flex flex-col leading-tight">
             <span className="font-arabic text-base font-bold text-emerald-deep">
-              دار النبلاء
+              مؤسسة النبلاء الاهلية
             </span>
             <span className="font-serif text-[11px] tracking-[0.22em] text-gold-deep">
               Al-Nubalaa Private School
@@ -428,7 +469,7 @@ function Hero() {
           </p>
 
           <h1 className="font-arabic text-[clamp(2.6rem,6vw,5.2rem)] font-extrabold leading-[1.05] text-emerald-deep">
-            دار النبلاء
+            مؤسسة النبلاء الاهلية
             <br />
             <span className="font-serif text-[clamp(1.4rem,3vw,2.4rem)] font-medium italic text-ink-soft">
               للطفولة النموذجية
@@ -495,15 +536,15 @@ function Hero() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
+    <div className="relative mx-auto aspect-4/5 w-full max-w-md">
       {/* gold ornamental ring */}
-      <div className="absolute inset-0 rounded-[2.5rem] border border-gold/40 [mask-image:linear-gradient(180deg,black,transparent)]" />
+      <div className="absolute inset-0 rounded-[2.5rem] border border-gold/40 mask-[linear-gradient(180deg,black,transparent)]" />
       {/* main card */}
-      <div className="absolute inset-3 overflow-hidden rounded-[2rem] shadow-[var(--shadow-luxe)]">
+      <div className="absolute inset-3 overflow-hidden rounded-4xl shadow-(--shadow-luxe)">
         {/* real photo of the school */}
         <Image
           src="/images/grade-1.jpg"
-          alt="طلاب دار النبلاء — الصف الأول"
+          alt="طلاب مؤسسة النبلاء الاهلية — الصف الأول"
           fill
           sizes="(min-width: 1024px) 32rem, 90vw"
           className="object-cover"
@@ -522,13 +563,7 @@ function HeroVisual() {
         <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-cream-soft/95 p-4 backdrop-blur-md">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <Image
-                src="/images/logo.png"
-                alt="Al-Nubalaa Private School"
-                width={48}
-                height={48}
-                className="h-11 w-11 object-contain"
-              />
+              <BrandMark className="h-10 w-10" />
               <div className="leading-tight">
                 <p className="font-arabic text-sm font-bold text-emerald-deep">
                   منذ سنوات في خدمة أطفالكم
@@ -546,7 +581,7 @@ function HeroVisual() {
       </div>
 
       {/* floating mini-cards */}
-      <div className="absolute -left-6 top-12 hidden rotate-[-6deg] rounded-2xl glass p-3 shadow-[var(--shadow-soft)] md:block">
+      <div className="absolute -left-6 top-12 hidden -rotate-6 rounded-2xl glass p-3 shadow-(--shadow-soft) md:block">
         <div className="flex items-center gap-2">
           <Icon.Heart className="h-4 w-4 text-emerald" />
           <span className="font-arabic text-xs font-bold text-emerald-deep">
@@ -554,7 +589,7 @@ function HeroVisual() {
           </span>
         </div>
       </div>
-      <div className="absolute -right-4 bottom-24 hidden rotate-[6deg] rounded-2xl glass p-3 shadow-[var(--shadow-soft)] md:block">
+      <div className="absolute -right-4 bottom-24 hidden rotate-6 rounded-2xl glass p-3 shadow-(--shadow-soft) md:block">
         <div className="flex items-center gap-2">
           <Icon.Star className="h-4 w-4 text-gold-deep" />
           <span className="font-arabic text-xs font-bold text-emerald-deep">
@@ -601,7 +636,7 @@ function ProgramCard({
     <article className="program-card relative overflow-hidden rounded-3xl border border-emerald/10 bg-cream-soft p-7">
       <div className="flex items-start justify-between">
         <div
-          className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${program.accent} text-cream-soft shadow-[var(--shadow-soft)]`}
+          className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br ${program.accent} text-cream-soft shadow-(--shadow-soft)`}
         >
           <Ico className="h-7 w-7" />
         </div>
@@ -640,7 +675,7 @@ function ProgramCard({
 
 function CallCard() {
   return (
-    <article className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-deep via-emerald to-emerald-soft p-7 text-cream-soft">
+    <article className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-deep via-emerald to-emerald-soft p-7 text-cream-soft">
       <Leaf className="absolute -right-6 -top-6 h-32 w-32 text-cream-soft/10" />
       <Leaf
         className="absolute -bottom-8 -left-6 h-28 w-28 text-gold/30"
@@ -709,16 +744,16 @@ function About() {
             <span>Al-Nubalaa Private School</span>
           </p>
           <h2 className="font-arabic text-4xl font-extrabold leading-tight text-emerald-deep md:text-5xl">
-            <span className="gold-shine">دار النبلاء</span>
+            <span className="gold-shine">مؤسسة النبلاء الاهلية</span>
             <br />
             للطفولة النموذجية
           </h2>
           <p className="mt-6 font-arabic text-lg leading-loose text-ink-soft">
             في قلب الكرادة الشرقية ببغداد، تقف{" "}
-            <strong className="text-emerald-deep">دار النبلاء</strong> صرحًا
-            تربويًا أنيقًا، يجمع بين دفء البيت وانضباط المدرسة الراقية. نُعِدّ
-            أطفالكم منذ الحضانة وحتى الابتدائية بمنهجٍ نموذجيّ، يصقل الموهبة،
-            يبني القِيَم، ويفتح آفاق العقل.
+            <strong className="text-emerald-deep">مؤسسة النبلاء الاهلية</strong>{" "}
+            صرحًا تربويًا أنيقًا، يجمع بين دفء البيت وانضباط المدرسة الراقية.
+            نُعِدّ أطفالكم منذ الحضانة وحتى الابتدائية بمنهجٍ نموذجيّ، يصقل
+            الموهبة، يبني القِيَم، ويفتح آفاق العقل.
           </p>
           <p className="mt-4 font-arabic text-lg leading-loose text-ink-soft">
             نؤمن أن الطفولة مرحلةٌ مقدّسة — لذلك نصمّم كل يومٍ ليكون مليئًا
@@ -757,12 +792,12 @@ function About() {
 function AboutVisual() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] border border-gold/30" />
-      <div className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-luxe)]">
-        <div className="relative aspect-[4/5]">
+      <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-4xl border border-gold/30" />
+      <div className="overflow-hidden rounded-4xl shadow-(--shadow-luxe)">
+        <div className="relative aspect-4/5">
           <Image
             src="/images/trip-1.jpg"
-            alt="رحلة مدرسية لطلاب دار النبلاء"
+            alt="رحلة مدرسية لطلاب مؤسسة النبلاء الاهلية"
             fill
             sizes="(min-width: 1024px) 28rem, 80vw"
             className="object-cover"
@@ -783,7 +818,7 @@ function AboutVisual() {
       </div>
 
       {/* badge */}
-      <div className="absolute -bottom-6 right-6 flex items-center gap-3 rounded-2xl bg-cream-soft px-4 py-3 shadow-[var(--shadow-luxe)]">
+      <div className="absolute -bottom-6 right-6 flex items-center gap-3 rounded-2xl bg-cream-soft px-4 py-3 shadow-(--shadow-luxe)">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20">
           <Icon.Star className="h-5 w-5 text-gold-deep" />
         </div>
@@ -828,7 +863,7 @@ function Features() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <p className="divider-luxe mb-6 !text-gold-soft">
+            <p className="divider-luxe mb-6 text-gold-soft!">
               <span>Al-Nubalaa Private School</span>
             </p>
             <h2 className="font-arabic text-4xl font-extrabold leading-tight md:text-5xl">
@@ -908,7 +943,7 @@ function Gallery() {
               href="https://www.facebook.com/AlNublaa"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative overflow-hidden rounded-2xl shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1 ${
+              className={`group relative overflow-hidden rounded-2xl shadow-(--shadow-soft) transition-transform hover:-translate-y-1 ${
                 [
                   "col-span-2 row-span-2",
                   "col-span-1 row-span-1",
@@ -929,7 +964,7 @@ function Gallery() {
                 sizes="(min-width: 1024px) 16rem, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3">
+              <span className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/30 to-transparent p-3">
                 <span className="font-arabic text-sm font-bold text-cream-soft">
                   {g.label}
                 </span>
@@ -948,7 +983,7 @@ function Contact() {
   return (
     <section id="contact" className="relative py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="overflow-hidden rounded-[2.5rem] border border-emerald/10 bg-gradient-to-br from-cream-soft to-cream shadow-[var(--shadow-luxe)]">
+        <div className="overflow-hidden rounded-[2.5rem] border border-emerald/10 bg-linear-to-br from-cream-soft to-cream shadow-(--shadow-luxe)">
           <div className="grid lg:grid-cols-12">
             {/* Left: info */}
             <div className="relative bg-emerald-deep p-10 text-cream-soft lg:col-span-5">
@@ -956,7 +991,7 @@ function Contact() {
                 className="absolute -right-6 -top-6 h-40 w-40 text-cream-soft/5"
                 style={{ ["--r" as string]: "30deg" }}
               />
-              <p className="divider-luxe !text-gold-soft">
+              <p className="divider-luxe text-gold-soft!">
                 <span>Al-Nubalaa Private School</span>
               </p>
               <h2 className="mt-6 font-arabic text-3xl font-extrabold leading-snug">
@@ -1092,16 +1127,10 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-12 lg:px-10">
         <div className="lg:col-span-4">
           <div className="flex items-center gap-3">
-            <Image
-              src="/images/logo.png"
-              alt="Al-Nubalaa Private School"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain"
-            />
+            <BrandMark className="h-12 w-12" />
             <div className="leading-tight">
               <p className="font-arabic text-lg font-bold text-emerald-deep">
-                دار النبلاء
+                مؤسسة النبلاء الاهلية
               </p>
               <p className="font-serif text-[11px] tracking-[0.22em] text-gold-deep">
                 Al-Nubalaa Private School
